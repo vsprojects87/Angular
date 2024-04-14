@@ -1,0 +1,42 @@
+<p>pipes-examples works!</p>
+<br><hr><br>
+
+
+
+<h4>Custome Pipe :</h4>
+<h5>{{ name | append }}</h5>
+<p>{{summary | argumentpipecli : 1}}</p>
+
+
+<br><hr><br>
+
+
+
+<h4>with and without pipes</h4><br> 
+<h4>{{name}} : {{ name | uppercase}}</h4>
+<h4>{{num}} : {{ num | number }}</h4>
+<h4>{{price}} : {{ price | currency:"USD"}}</h4>
+<!-- here 2 represent 2 digits before dot and 2-3 denotes min 2 and max 3 digits after dot , it will round of the number if value after dot is more than 5
+-->
+<h4>{{decimalvalue}} : {{ decimalvalue | number : '2.2-3'}}</h4>
+<h4>{{decimalvalue}} : {{ decimalvalue | number : '2.0-0'}}</h4>
+
+<br>
+<h4>{{today | date:'short'}}</h4>
+<h4>{{today | date:'shortDate'}}</h4>
+<h4>{{today | date:'longDate'}}</h4>
+<h4>{{today | date:'shortTime'}}</h4>
+<br>
+
+<h4>{{objData | json}}</h4>
+
+<h4>{{ 5 | percent }}</h4>
+<h4>{{ .763 | percent }}</h4>
+
+<br>
+
+<h4>{{arr}}</h4>
+<h4>{{arr | slice : 0:3}}</h4>
+
+
+<div style="padding-bottom: 5vh; padding-top: 5vh;">Footer to add bottom space</div>

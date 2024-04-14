@@ -1,0 +1,39 @@
+<div class="container-fluid m-3 fs-4 bg-dark text-light" style="height: 90vh; width: auto; border: 10px solid rgb(255, 89, 117);">  
+    <p>task2 works!</p>
+
+    <div class="mx-5">
+
+        <div>
+            <label class="mx-3">Enter Name</label>
+            <input style="height: 30px" type="text" [(ngModel)]="name">
+            <br><br>
+            <label class="mx-3">Enter Address</label>
+            <input style="height: 30px" type="text" [(ngModel)]="address">
+            <br><br>
+            <button class="mx-3 btn btn-outline-info" (click)="onclick()">Add</button>
+        </div>
+        
+        <div *ngIf="arr.length>0 , else nodata">
+            <div class="mt-5">
+                <table class="table w-50">
+                    <thead>
+                        <th>sr.no</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </thead>
+                    <tr *ngFor="let item of arr; let idx=index">
+                        <td>{{idx+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.address}}</td>
+                        <td><button class="mx-3 btn btn-dark" (click)="onclickDelete(idx)">Delete</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <ng-template #nodata>No records to display . . .</ng-template>
+
+    </div>
+
+</div>
+

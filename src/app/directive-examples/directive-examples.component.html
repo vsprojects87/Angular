@@ -1,0 +1,167 @@
+
+<div class="container">
+<br>
+<p>directive-examples works!</p>
+<hr>
+<br>
+
+
+<!--
+                ##### ngClass ##### 
+-->
+<h3 class="mb-3 mt-3">ngClass</h3>
+
+<h2 [class]="false? 'class-blue':'class-pink'">Using Class Binding</h2>
+<h2 [class.class-blue]="true">Using Class Binding</h2>
+
+<h2 [ngClass]="{
+    'class-violet':'true'
+}">Using ngClass</h2>
+<br><hr><br>
+
+<style>
+.class-blue{
+    color: blue;
+}
+.class-pink{
+    color: palevioletred;
+}
+.class-violet{
+    color: blueviolet;
+}
+</style>
+
+
+
+<!--
+                ##### ngStyle ##### 
+-->
+<h2 [ngStyle]="{
+    color:isActive ? 'blue' : 'red',
+    textTransform : isActive ? 'uppercase' : 'lowercase',
+    textDecoration : isActive ? 'none':'underline'
+}">
+This is ngStyle h2
+</h2>
+<br>
+<hr>
+<br>
+
+
+
+<!--
+                ##### ngSwitch ##### 
+-->
+<h3 class="mb-3 mt-3">ngSwitch</h3>
+
+
+<!-- when we will click on button it will set the value of num variable to functions value and ngIf anf ngSwitch will check if the variable value match with the case then will display the div -->
+method 1: *nfIf
+<div>
+<button (click)="onclick('1')">1</button>
+<button (click)="onclick('2')">2</button>
+<button (click)="onclick('3')">3</button>
+</div>
+
+<div *ngIf="num=='1'">one</div>
+<div *ngIf="num=='2'">two</div>
+<div *ngIf="num=='3'">three</div>
+<div *ngIf="num==undefined">Default Text ...</div>
+<br><br>
+
+method 2: ngSwitch
+
+<div>
+    <button (click)="onclick('1')">1</button>
+    <button (click)="onclick('2')">2</button>
+    <button (click)="onclick('3')">3</button>
+</div>
+
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="'1'">one</div>
+    <div *ngSwitchCase="'2'">two</div>
+    <div *ngSwitchCase="'3'">three</div>    
+    <div *ngSwitchDefault>Default Text ...</div>    
+</div>
+<br>
+<hr>
+<br>
+
+<!--
+                ##### *ngFor ##### 
+-->
+<h3 class="mb-3 mt-3">*ngIf</h3>
+
+
+<!-- if records found then will show the records otherwise will show no records found -->
+<div *ngIf="arr.length > 0">
+    <ul style="display: flex;justify-content: space-evenly; flex-wrap: nowrap;">
+        <li *ngFor="let j of arr">{{j}}</li>
+        <button class="btn btn-outline-danger" (click)="onDelete(0)">DeleteByItem</button>&nbsp;
+    </ul>
+</div>
+<div *ngIf="arr.length == 0">
+    <p>No records to display . . . </p>
+</div>
+<hr>
+<br>
+
+
+using If-else :
+<div *ngIf="arr.length > 0 ; else nodata">
+    <ul style="display: flex;justify-content: space-evenly; flex-wrap: nowrap;">
+        <li *ngFor="let j of arr">{{j}}</li>
+        <button class="btn btn-outline-danger" (click)="onDelete(0)">DeleteByItem</button>&nbsp;
+    </ul>
+</div>
+<ng-template #nodata>
+    <p>No records to display . . . </p>
+</ng-template>
+<hr>
+<br>
+
+using If-else-then :
+<!-- it will display data template if arr has records otherwise will show mssage of nodata -->
+<div *ngIf="arr.length > 0 ; then data else nodata"></div>
+<ng-template #data>
+    <ul style="display: flex;justify-content: space-evenly; flex-wrap: nowrap;">
+        <li *ngFor="let j of arr">{{j}}</li>
+        <button class="btn btn-outline-danger" (click)="onDelete(0)">DeleteByItem</button>&nbsp;
+    </ul>
+</ng-template>
+<ng-template #nodata>
+    <p>No records to display . . . </p>
+</ng-template>
+<hr>
+<br>
+
+
+<!--
+                ##### *ngFor ##### 
+-->
+<h3 class="mb-3 mt-3">*ngFor</h3>
+
+
+<ul>
+    using json Pipe:
+    <li *ngFor="let i of objArr">{{i | json}}</li>
+    <br>
+    accessing the properties as key value:
+    <li *ngFor="let i of objArr">{{i.id}} : {{i.name}}</li>
+</ul>
+<hr>
+<br>
+
+<!-- first button will delete by passing item
+second button will delete by passing index of that item -->
+<ul>
+    <li *ngFor="let i of arr; let idx = index">
+    {{i}} &nbsp;
+    <button class="btn btn-outline-danger" (click)="onDelete(i)">DeleteByItem</button>&nbsp;
+    <button class="btn btn-outline-danger" (click)="onDeleteIndex(idx)">DeleteByIndex</button>
+    <br><br>
+    </li>
+</ul>
+
+
+</div>

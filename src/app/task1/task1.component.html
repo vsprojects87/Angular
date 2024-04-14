@@ -1,0 +1,46 @@
+<p>task1 works!</p>
+
+
+<div style="margin: auto; width: 30%; margin-top: 20vh; ">
+Enter Title
+<input type="text"  [(ngModel)]="title">
+<br><br>
+Enter Details
+<input type="text" [(ngModel)]="detail">
+<br><br>
+Enter Image url
+<input type="text" [(ngModel)]="imgUrl">
+<br><br>
+Enter Link
+<input type="text" [(ngModel)]="link">
+<br><br>
+<input type="checkbox" name="Add Background" [(ngModel)]="background"> &nbsp;
+<label>Add Background</label>
+
+<!-- background is boolean type so when we click on checkbox it gets true and we are passing it to class binding which is making it true -->
+<h1 [class.add-background]="background">{{title}}</h1>
+<br><br>
+
+{{detail}}
+<br><br>
+
+<img [src]="imgUrl" src="C:\Users\hp\Pictures\img\dsd.jpg" height="100" width="auto">
+<br><br>
+
+<!-- here we are applying style which says if we have url then it will show link otherwise none, b default in style the link tag set to display none
+-->
+<a [href]="link" target="_blank" [style.display]="link ? 'block':''">New Link</a>
+
+</div>
+
+
+<style>
+    .add-background{
+        background-color: coral;
+        padding: 10px;
+        width: min-content;
+    }
+    a{
+        display: none;
+    }
+</style>
