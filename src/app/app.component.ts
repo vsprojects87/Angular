@@ -9,12 +9,18 @@ export class AppComponent {
   title = 'AngIntro';
 
   data : string |undefined;
-  onkeyup(){
-    console.log(this.data);
-    // console.log($event)
-    // console.log($event.keyCode);
-    // if($event.keyCode == 13){
-    //   console.log('Enter pressed');
-    // }
-  }
+  
+  // onkeyup($event : any){
+  //   console.log($event)
+  //   console.log($event.keyCode);
+  //   if($event.keyCode == 13){
+  //     console.log('Enter pressed');
+  //   }
+  // }
+
+  // handleClick($event : any) {
+  //   console.log('Button clicked!', $event);
+  //   // You can access event details here, for example:
+  //   console.log('Button clicked at:', $event.clientX, $event.clientY);
+  // }
 }
