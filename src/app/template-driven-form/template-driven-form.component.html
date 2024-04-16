@@ -1,0 +1,24 @@
+<div class="container">
+<p class="mb-5">template-driven-form works!</p>
+
+    <div class="form-area">
+        <form #f="ngForm" (ngSubmit)="onsubmit(f)">
+            <div class="form-group mb-3">
+                <label for="">Enter Name</label>
+                <input type="text" class="form-control" name="fullname" ngModel #fullname="ngModel" required>
+                <div class="alert alert-danger" [ngClass]="{'is-invalid' : fullname.invalid && fullname.touched}" *ngIf="fullname.invalid && fullname.touched">Required</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Enter Email</label>
+                <input type="email" class="form-control" name="email" ngModel #email="ngModel" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Enter Address</label>
+                <textarea cols="30" rows="10" class="form-control" name="address" ngModel #address="ngModel" required></textarea>
+            </div>
+        
+            <button type="submit" class="btn btn-outline-info mb-5" [disabled]="f.invalid">Submit</button>
+        </form>        
+    </div>
+
+</div>

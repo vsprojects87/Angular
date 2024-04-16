@@ -1,0 +1,9 @@
+<p>post works!</p>
+
+<button (click)="addNewDataToService()">Add Post</button>
+
+<ul>
+    <li *ngFor="let p of posts"> 
+        {{p.post}}
+    </li>
+</ul>
