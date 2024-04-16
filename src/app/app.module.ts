@@ -14,6 +14,7 @@ import { ArgumentpipecliPipe } from './Pipes/argumentpipecli.pipe';
 import { PostComponent } from './post/post.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormCustomValidationComponent } from './reactive-form-custom-validation/reactive-form-custom-validation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ArgumentpipecliPipe,
     PostComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ReactiveFormCustomValidationComponent
   ],
   imports: [
     BrowserModule,

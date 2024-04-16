@@ -1,0 +1,25 @@
+<p>reactive-form-custom-validation works!</p>
+
+<div class="container">
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username">
+            <div *ngIf="fc.username.errors?.required">
+                <div class="alert alert-danger" *ngIf="fc.username.touched&&fc.username.invalid">Username is required</div>    
+            </div>
+            <div *ngIf="fc.username.errors?.minLength">
+                <div class="alert alert-danger" *ngIf="fc.username.touched&&fc.username.invalid">Username must be atleast 5 digits</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <div *ngIf="fc.Password.errors?.required">
+                <div class="alert alert-danger" *ngIf="fc.Password.touched&&fc.username.invalid">Password is required</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+</div>
