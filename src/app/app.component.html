@@ -1,6 +1,6 @@
 <body style="background-color: black;width: 100vw;height: auto; color: antiquewhite;">
 
-<!-- Note : i have disable the componen from showing at a time by display : none so we can use multiple component in same app but we can choose which one to display and when -->
+<!-- Note : i have disable the component from showing at a time by display : none so we can use multiple component in same app but we can choose which one to display and when -->
 
 <app-task1 style="display: none;"></app-task1>
 
@@ -18,7 +18,17 @@
 
 <app-reactive-form-custom-validation style="display: none;"></app-reactive-form-custom-validation>
 
+<!-- <app-routing-example></app-routing-example> -->
+
+<!-- below example is for routing  -->
+<button routerLink="/" routerLinkActive="active">Home</button>
+<button routerLink="/routing-example" routerLinkActive="active">routing-example-post</button>
+
+<router-outlet></router-outlet>
+
 </body>
+
+
 
 <!-- <button (click)="handleClick($event)">Click me</button> -->
 <!-- <input type="text" (keyup)= "onkeyup($event)"/> -->

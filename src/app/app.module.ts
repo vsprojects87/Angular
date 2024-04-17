@@ -16,7 +16,9 @@ import { PostComponent } from './post/post.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormCustomValidationComponent } from './reactive-form-custom-validation/reactive-form-custom-validation.component';
-
+import { RoutingExampleComponent } from './routing-example/routing-example.component';
+import { RoutingExample2Component } from './routing-example-2/routing-example-2.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +31,16 @@ import { ReactiveFormCustomValidationComponent } from './reactive-form-custom-va
     PostComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
-    ReactiveFormCustomValidationComponent
+    ReactiveFormCustomValidationComponent,
+    RoutingExampleComponent,
+    RoutingExample2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
