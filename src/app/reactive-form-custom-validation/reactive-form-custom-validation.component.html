@@ -1,25 +1,27 @@
 <p>reactive-form-custom-validation works!</p>
-
 <div class="container">
     <form [formGroup]="form">
         <div class="form-group">
             <label>Username</label>
             <input type="text" class="form-control" formControlName="username">
-            <div *ngIf="fc.username.errors?.required">
-                <div class="alert alert-danger" *ngIf="fc.username.touched&&fc.username.invalid">Username is required</div>    
+            <div *ngIf="form.get('username').errors?.required">
+                <div class="alert alert-danger" *ngIf="form.get('username').touched && form.get('username').invalid">Username is required</div>    
             </div>
-            <div *ngIf="fc.username.errors?.minLength">
-                <div class="alert alert-danger" *ngIf="fc.username.touched&&fc.username.invalid">Username must be atleast 5 digits</div>
+            <div *ngIf="form.get('username').errors?.minlength">
+                <div class="alert alert-danger" *ngIf="form.get('username').touched && form.get('username').errors.minlength">Username must be at least 5 characters</div>
+            </div>
+            <div *ngIf="form.get('username').errors?.noSpaceValidations">
+                <div class="alert alert-danger" *ngIf="form.get('username').touched && form.get('username').errors.noSpaceValidations">Username cannot contain spaces</div>
             </div>
         </div>
         <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" formControlName="password">
-            <div *ngIf="fc.Password.errors?.required">
-                <div class="alert alert-danger" *ngIf="fc.Password.touched&&fc.username.invalid">Password is required</div>
+            <div *ngIf="form.get('password').errors?.required">
+                <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').errors.required">Password is required</div>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Sign In</button>
     </form>
 </div>
