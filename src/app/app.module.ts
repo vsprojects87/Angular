@@ -18,6 +18,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormCustomValidationComponent } from './reactive-form-custom-validation/reactive-form-custom-validation.component';
 import { RoutingExampleComponent } from './routing-example/routing-example.component';
 import { RoutingExample2Component } from './routing-example-2/routing-example-2.component';
+import { ObservableExampleComponent } from './observable-example/observable-example.component';
  
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RoutingExample2Component } from './routing-example-2/routing-example-2.
     ReactiveFormComponent,
     ReactiveFormCustomValidationComponent,
     RoutingExampleComponent,
-    RoutingExample2Component
+    RoutingExample2Component,
+    ObservableExampleComponent
   ],
   imports: [
     BrowserModule,

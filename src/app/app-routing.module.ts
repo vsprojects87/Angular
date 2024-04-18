@@ -7,7 +7,8 @@ import { RoutingExample2Component } from './routing-example-2/routing-example-2.
 const routes: Routes = [
   { path :'' , component:AppComponent },
   { path :'routing-example' , component:RoutingExampleComponent },
-  { path :'routing-example/:id' , component:RoutingExample2Component }
+  { path :'routing-example/:id/:title' , component:RoutingExample2Component }
+  // above example above multiple router parameter
 ];
 
 @NgModule({
@@ -16,3 +17,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
+// to create a new routing module file ng g m  app-routing --module app --flat
+// to create a new module file ng g m  app- --module app --flat

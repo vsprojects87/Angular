@@ -2,6 +2,7 @@
 
 <div *ngFor="let post of posts, let i = index">
     <h1>{{post.title}}</h1>
-    <button [routerLink]="['/routing-example',i]">View Content</button>
+    <button [routerLink]="['/routing-example',i,post.title]">View Content</button>
+    <!-- example of multiple parameter -->
     <hr>
 </div>

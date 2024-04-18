@@ -2,27 +2,29 @@
 
 <!-- Note : i have disable the component from showing at a time by display : none so we can use multiple component in same app but we can choose which one to display and when -->
 
-<app-task1 style="display: none;"></app-task1>
+<!-- <app-task1 style="display: none;"></app-task1> -->
 
-<app-directive-examples style="display: none;"></app-directive-examples>
+<!-- <app-directive-examples style="display: none;"></app-directive-examples> -->
 
-<app-task2 style="display: none;"></app-task2>
+<!-- <app-task2 style="display: none;"></app-task2> -->
 
-<app-pipes-examples style="display: none;"></app-pipes-examples>
+<!-- <app-pipes-examples style="display: none;"></app-pipes-examples> -->
 
-<app-post style="display: none;"></app-post>
+<!-- <app-post style="display: none;"></app-post> -->
 
-<app-template-driven-form style="display: none;"></app-template-driven-form>
+<!-- <app-template-driven-form style="display: none;"></app-template-driven-form> -->
 
-<app-reactive-form style="display: none;"></app-reactive-form>
+<!-- <app-reactive-form style="display: none;"></app-reactive-form> -->
 
-<app-reactive-form-custom-validation style="display: none;"></app-reactive-form-custom-validation>
+<!-- <app-reactive-form-custom-validation style="display: none;"></app-reactive-form-custom-validation> -->
 
 <!-- <app-routing-example></app-routing-example> -->
 
-<!-- below example is for routing  -->
+<!-- below example is for routing and routing-example files  -->
 <button routerLink="/" routerLinkActive="active">Home</button>
-<button routerLink="/routing-example" routerLinkActive="active">routing-example-post</button>
+<button routerLink="/routing-example" routerLinkActive="active" [queryParams]="{page:1,orberBy :'newest'}">routing-example-post</button>
+
+<!-- <app-observable-example></app-observable-example> -->
 
 <router-outlet></router-outlet>
 
